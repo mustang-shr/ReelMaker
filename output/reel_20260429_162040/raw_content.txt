@@ -1,0 +1,221 @@
+
+[Page 1]
+The image contains the following text:
+
+* Architecting Access
+* A visual guide to how OAuth 2.0 and OpenID Connect actually work.
+* NotebookLM
+
+[Page 2]
+Simple internet standards are hidden behind impenetrable jargon
+
+BEFORE
+
+AuthZ
+Scopes
+JWT
+Grants
+OIDC
+Access Tokens
+Bearer
+
+AFTER
+
+THE TOKENS
+
+ACCESS TOKEN (OAuth)
+
+ID TOKEN (OIDC)
+
+THE FLOW
+
+Request Authorization
+Authorization Grant
+Client App
+Exchange Grant for Tokens
+Access Resources (with Token)
+
+THE ACTORS
+
+User (Resource Owner)
+Client App
+Authorization Server
+Resource Server
+
+OAuth 2.0 and OpenID Connect (OIDC) exist to solve a simple problem: enabling one application to securely access data from another.
+
+The logic is straightforward, but the overlapping terminology obscures the mechanics.
+
+This guide translates the jargon into a concrete, visual mental model.
+
+NotebookLM
+
+[Page 3]
+The image presents a diagram illustrating the OAuth 2.0 authorization framework, accompanied by explanatory text. The title at the top reads, "OAuth 2.0 is strictly an authorization framework." Below this, a blue line with white dashes connects three icons: a smartphone labeled "Application A," an orange padlock, and a stack of three boxes labeled "Application B."
+
+Underneath the diagram, three boxes contain text that explains the goal, mechanism, and domain of OAuth 2.0:
+
+*   **The Goal:** Enables one application to access data from another on your behalf.
+*   **The Mechanism:** Delegation. You grant permission without handing over your password.
+*   **The Domain:** Authorization (AuthZ) only. It determines what an application is allowed to do.
+
+In the bottom-right corner, a small logo features a stylized "N" and the text "NotebookLM." The background of the image resembles graph paper, with a white grid pattern.
+
+[Page 4]
+The image presents a diagram illustrating the concept of an OAuth Access Token as a hotel keycard. The title, "Think of an OAuth Access Token as a hotel keycard," is prominently displayed at the top.
+
+**Key Elements:**
+
+* A door with a lock and handle
+* A hand holding an orange card, which represents the OAuth Access Token
+* Three text boxes providing additional information:
+	+ "Grants Specific Access Opens Room 214 and the Gym."
+	+ "Temporary Expires on Tuesday at 11:00 AM."
+	+ "Anonymous The door lock does not know who is holding the card. It only knows the card is valid."
+
+**Conclusion:**
+
+The image effectively conveys the idea that an OAuth Access Token serves as a unique identifier, granting access to specific resources while maintaining anonymity. This concept is analogous to a hotel keycard, which allows guests to access their rooms and other authorized areas without revealing their identity.
+
+[Page 5]
+The four structural actors in any OAuth architecture
+
+The Resource Owner
+The User. You, sitting at your device, deciding what to share.
+
+The Client
+The Application. The app that wants to access your data.
+
+The Authorization Server
+The Auth Server. The system that verifies your consent and issues tokens.
+
+The Resource Server
+The API. The system holding your secure data, waiting for a valid token.
+
+[Page 6]
+[vision extraction failed]
+
+[Page 7]
+The image presents a flowchart illustrating the process of user authentication and consent granting, titled "Step 2: The user authenticates and grants consent." The flowchart is divided into three main sections, each representing a distinct step in the process.
+
+**Step 1: The Resource Owner (The User)**
+
+* A person sitting at a desk with a computer
+* The user logs into the Authorization Server directly (the Client never sees the password) and approves the requested permissions. The Auth Server sends a temporary Authorization Code back to the Client.
+
+**Step 2: The Authorization Server**
+
+* A server with a shield icon
+* The User logs into the Authorization Server directly (the Client never sees the password) and approves the requested permissions. The Auth Server sends a temporary Authorization Code back to the Client.
+
+**Step 3: The Client**
+
+* A smartphone with a consent required message
+* The User logs into the Authorization Server directly (the Client never sees the password) and approves the requested permissions. The Auth Server sends a temporary Authorization Code back to the Client.
+
+The flowchart also includes additional text and icons, including:
+
+* A consent required message on the smartphone
+* A temporary Authorization Code sent by the Auth Server
+* A shield icon representing the Authorization Server
+* A person sitting at a desk with a computer, representing the Resource Owner (The User)
+
+Overall, the flowchart provides a clear and concise visual representation of the user authentication and consent granting process, highlighting the key steps and interactions between the different components involved.
+
+[Page 8]
+The image presents a flowchart illustrating the process of retrieving an Access Token, with the title "Step 3: The application retrieves the Access Token" at the top. The flowchart is divided into three main sections, each representing a different entity involved in the process.
+
+**Section 1: The Resource Owner**
+
+* A person sitting at a desk with a computer
+* Label: "The Resource Owner"
+* Label: "The User"
+
+**Section 2: The Authorization Server**
+
+* A server with a shield and keyhole
+* Label: "The Authorization Server"
+
+**Section 3: The Client**
+
+* A smartphone with a lock icon
+* Label: "The Client"
+
+The flowchart shows the following steps:
+
+1. The Client securely trades the temporary Authorization Code for an official Access Token.
+2. The Client sends a request to the Authorization Server to retrieve the Access Token.
+3. The Authorization Server verifies the request and sends the Access Token to the Client.
+
+The background of the image features a white grid pattern, with a faint watermark of a notebook logo in the bottom-right corner. The overall design of the image suggests that it is intended to be used as a visual aid for explaining the process of retrieving an Access Token in a technical or educational setting.
+
+[Page 9]
+[vision extraction failed]
+
+[Page 10]
+[vision extraction failed]
+
+[Page 11]
+The image presents a comprehensive overview of OpenID Connect, highlighting its role in providing the missing identity layer. The title, "OpenID Connect provides the missing identity layer," is prominently displayed at the top, accompanied by the subtitle "Isometric Blueprint." 
+
+**Key Components:**
+
+* **The Standard:** OpenID Connect (OIDC)
+* **The Goal:** Enables clients to verify the identity of the end-user
+* **The Domain:** Authentication (AuthN). It answers the question, "Who is this person?"
+* **The Output:** Issues a standardized ID Token alongside the Access Token
+
+**Visual Representation:**
+
+A blue outline of a human head and shoulders is depicted on the left side of the image, with a purple keyhole in the center of the chest. This visual representation effectively illustrates the concept of OpenID Connect as a means of unlocking and verifying identities.
+
+**Source:**
+
+The image is attributed to NotebookLM, as indicated by the logo in the bottom-right corner.
+
+[Page 12]
+[vision extraction failed]
+
+[Page 13]
+The image presents a flowchart illustrating the process of OIDC seamlessly piggybacking on the OAuth flow. The title, "OIDC seamlessly piggybacks on the OAuth flow," is prominently displayed at the top.
+
+**Flowchart Components:**
+
+*   **User Icon:** A gray icon representing the user is situated in the upper-left corner.
+*   **Access Token:** An orange cube labeled "Access Token" is positioned below the user icon.
+*   **ID Token:** A purple triangle labeled "ID Token" is located to the right of the access token.
+*   **Client Icon:** A blue cube representing the client is placed above the ID token.
+*   **API Icon:** A gray cube labeled "The API" is situated below the ID token.
+*   **Auth Server Icon:** A blue cube labeled "The Auth Server" is positioned below the access token.
+
+**Arrows and Text:**
+
+*   Blue arrows connect the components, indicating the flow of information.
+*   The text "By adding the openid scope to the initial request, the Authorization Server knows to return a readable ID Token (for the Client) alongside the standard Access Token (for the API)" is displayed at the bottom of the image.
+
+**Background:**
+
+*   The background of the image features a white grid pattern.
+
+**Logo:**
+
+*   A small logo for NotebookLM is visible in the bottom-right corner of the image.
+
+**Overall:**
+
+*   The image effectively illustrates the process of OIDC seamlessly piggybacking on the OAuth flow, providing a clear and concise visual representation of the components and their relationships.
+
+[Page 14]
+The image contains the following text:
+
+* "OpenID Connect is an extension built directly on top of OAuth 2.0" (title)
+* "Handles the plumbing: Redirects, Grants, and Access Tokens." (label)
+* "Adds the identity semantics: Userinfo, Standardized Scopes, and ID Tokens." (label)
+* "OAuth 2.0" (label)
+* "OpenID Connect" (label)
+* "NotebookLM" (logo)
+
+Note that the text is presented in a specific order, with the title at the top, followed by the labels and logo at the bottom.
+
+[Page 15]
+[vision extraction failed]

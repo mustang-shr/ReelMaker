@@ -1,0 +1,27 @@
+ALEX: You're about to log in to your favorite app, but have you ever stopped to think about what's happening behind the scenes?
+
+MAYA: Your personal data is being shared between multiple applications, and it's all thanks to a simple yet powerful technology called OAuth 2.0.
+
+ALEX: But here's the thing - OAuth 2.0 is hidden behind impenetrable jargon. Did you know that it's just an authorization framework that determines what an application can do with your data?
+
+[PAUSE]
+
+MAYA: Think of an OAuth Access Token like a hotel keycard. It grants specific access to resources, is temporary, and anonymous. The door lock doesn't know who's holding the card, only that it's valid.
+
+ALEX: That's mind-blowing. But what about the actors involved in this process? Did you know that there are four main players - the Resource Owner (that's you), the Client (the app), the Authorization Server, and the Resource Server?
+
+MAYA: Exactly. And they all work together to ensure that your data is shared securely. But here's the thing - OpenID Connect (OIDC) is an extension of OAuth 2.0 that adds an extra layer of identity verification.
+
+[PAUSE]
+
+ALEX: So, OIDC is like a special key that unlocks your identity and verifies who you are. But how does it work? Did you know that OIDC seamlessly piggybacks on the OAuth flow, adding an extra token that contains your identity information?
+
+MAYA: That's right. And it's all thanks to the "openid scope" that's added to the initial request. It's like a secret handshake that tells the Authorization Server to return a readable ID Token alongside the standard Access Token.
+
+[MUSIC_UP]
+
+ALEX: Wow, that's a lot to take in. But here's the thing - understanding how OAuth 2.0 and OpenID Connect work is crucial in today's digital age. So, what can you do to stay safe online?
+
+MAYA: Stay tuned for our next episode, where we'll dive deeper into the world of online security and explore practical tips to protect your personal data.
+
+[END]

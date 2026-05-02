@@ -1,0 +1,92 @@
+[
+  {
+    "speaker": "ALEX",
+    "text": "Imagine a 200-page recipe book that can solve the world's most mind-boggling problems. Sounds crazy, right?",
+    "start_ms": 0,
+    "end_ms": 8712
+  },
+  {
+    "speaker": "MAYA",
+    "text": "That's exactly what the world's most complex algorithms can do. Today, we're cracking open that book and uncovering its secrets.",
+    "start_ms": 8962,
+    "end_ms": 18274
+  },
+  {
+    "speaker": "ALEX",
+    "text": "I've heard algorithms can solve problems in the blink of an eye. Is that true?",
+    "start_ms": 18524,
+    "end_ms": 24620
+  },
+  {
+    "speaker": "MAYA",
+    "text": "Absolutely. Algorithms like the FFT can process massive data in a fraction of a second.",
+    "start_ms": 24870,
+    "end_ms": 32190
+  },
+  {
+    "speaker": "ALEX",
+    "text": "That's insane. How does it work?",
+    "start_ms": 32440,
+    "end_ms": 35392
+  },
+  {
+    "speaker": "MAYA",
+    "text": "The FFT breaks down complex data into smaller chunks using a technique called radix-2.",
+    "start_ms": 35642,
+    "end_ms": 43298
+  },
+  {
+    "speaker": "ALEX",
+    "text": "What about binary trees? Why are they so important?",
+    "start_ms": 44248,
+    "end_ms": 48760
+  },
+  {
+    "speaker": "MAYA",
+    "text": "Binary trees are like a super-efficient filing system for computers.",
+    "start_ms": 49010,
+    "end_ms": 54002
+  },
+  {
+    "speaker": "ALEX",
+    "text": "That makes sense. But who are the masterminds behind these algorithms?",
+    "start_ms": 54252,
+    "end_ms": 59868
+  },
+  {
+    "speaker": "MAYA",
+    "text": "The community is huge and global. From students to pros, they're working together to create something incredible.",
+    "start_ms": 60118,
+    "end_ms": 68638
+  },
+  {
+    "speaker": "ALEX",
+    "text": "Wait... what's the most complex algorithm out there?",
+    "start_ms": 69588,
+    "end_ms": 73836
+  },
+  {
+    "speaker": "MAYA",
+    "text": "That's the million-dollar question. But I think it's the one that's still being developed \u2013 the algorithm that will solve the world's most pressing problems.",
+    "start_ms": 74086,
+    "end_ms": 84718
+  },
+  {
+    "speaker": "MUSIC_UP",
+    "text": "",
+    "start_ms": 84968,
+    "end_ms": 84968
+  },
+  {
+    "speaker": "ALEX",
+    "text": "And that's exactly what we'll be exploring in our next episode. But here's the thing \u2013 we need your help to crack the code. Share your thoughts with us on social media using #algorithmadventures.",
+    "start_ms": 84968,
+    "end_ms": 99656
+  },
+  {
+    "speaker": "MAYA",
+    "text": "Don't forget to subscribe and join the conversation. The algorithmic adventure continues...",
+    "start_ms": 99906,
+    "end_ms": 106626
+  }
+]

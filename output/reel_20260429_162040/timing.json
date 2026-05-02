@@ -1,0 +1,68 @@
+[
+  {
+    "speaker": "ALEX",
+    "text": "You're about to log in to your favorite app, but have you ever stopped to think - who's really holding the keys to your digital life?",
+    "start_ms": 0,
+    "end_ms": 9312
+  },
+  {
+    "speaker": "MAYA",
+    "text": "Your personal data is being shared between multiple applications, thanks to a powerful tech called OAuth 2.0.",
+    "start_ms": 9562,
+    "end_ms": 18682
+  },
+  {
+    "speaker": "ALEX",
+    "text": "But here's the shocking truth - OAuth 2.0 is hiding in plain sight. It's an authorization framework that controls what apps can do with your data.",
+    "start_ms": 18932,
+    "end_ms": 31052
+  },
+  {
+    "speaker": "MAYA",
+    "text": "Think of an OAuth Access Token like a hotel keycard. It grants access, is temporary, and anonymous. The lock doesn't know who's holding it, just that it's valid.",
+    "start_ms": 32002,
+    "end_ms": 45466
+  },
+  {
+    "speaker": "ALEX",
+    "text": "Mind-blowing, right? But what about the players involved? There are four main actors - you, the app, the Authorization Server, and the Resource Server.",
+    "start_ms": 45716,
+    "end_ms": 58700
+  },
+  {
+    "speaker": "MAYA",
+    "text": "Exactly. They work together to keep your data safe. But here's the thing - OpenID Connect (OIDC) is an extension of OAuth 2.0 that adds an extra layer of identity verification.",
+    "start_ms": 58950,
+    "end_ms": 74694
+  },
+  {
+    "speaker": "ALEX",
+    "text": "Wait... what? You mean OIDC is like a superpower that unlocks your identity and verifies who you are?",
+    "start_ms": 75644,
+    "end_ms": 84572
+  },
+  {
+    "speaker": "MAYA",
+    "text": "Exactly. OIDC piggybacks on the OAuth flow, adding a token with your identity info. It's all thanks to the \"openid scope\" - a secret handshake that tells the server to return a readable ID Token.",
+    "start_ms": 84822,
+    "end_ms": 101646
+  },
+  {
+    "speaker": "MUSIC_UP",
+    "text": "",
+    "start_ms": 101896,
+    "end_ms": 101896
+  },
+  {
+    "speaker": "ALEX",
+    "text": "Now, here's the million-dollar question - can you really trust the apps you use every day? Stay tuned for our next episode, where we'll expose the dark side of online security and reveal the shocking truth about your digital footprint.",
+    "start_ms": 101896,
+    "end_ms": 120424
+  },
+  {
+    "speaker": "MAYA",
+    "text": "And we'll give you the tools to take back control of your personal data. But for now, the question remains - who's really in charge of your online life?",
+    "start_ms": 120674,
+    "end_ms": 130826
+  }
+]

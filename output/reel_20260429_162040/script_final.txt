@@ -1,0 +1,25 @@
+ALEX: You're about to log in to your favorite app, but have you ever stopped to think - who's really holding the keys to your digital life? 
+
+MAYA: Your personal data is being shared between multiple applications, thanks to a powerful tech called OAuth 2.0.
+
+ALEX: But here's the shocking truth - OAuth 2.0 is hiding in plain sight. It's an authorization framework that controls what apps can do with your data.
+
+[PAUSE]
+
+MAYA: Think of an OAuth Access Token like a hotel keycard. It grants access, is temporary, and anonymous. The lock doesn't know who's holding it, just that it's valid.
+
+ALEX: Mind-blowing, right? But what about the players involved? There are four main actors - you, the app, the Authorization Server, and the Resource Server.
+
+MAYA: Exactly. They work together to keep your data safe. But here's the thing - OpenID Connect (OIDC) is an extension of OAuth 2.0 that adds an extra layer of identity verification.
+
+[PAUSE]
+
+ALEX: Wait... what? You mean OIDC is like a superpower that unlocks your identity and verifies who you are?
+
+MAYA: Exactly. OIDC piggybacks on the OAuth flow, adding a token with your identity info. It's all thanks to the "openid scope" - a secret handshake that tells the server to return a readable ID Token.
+
+[MUSIC_UP]
+
+ALEX: Now, here's the million-dollar question - can you really trust the apps you use every day? Stay tuned for our next episode, where we'll expose the dark side of online security and reveal the shocking truth about your digital footprint.
+
+MAYA: And we'll give you the tools to take back control of your personal data. But for now, the question remains - who's really in charge of your online life?
