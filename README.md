@@ -1,118 +1,123 @@
-NVIDIA NIM · build.nvidia.com
-Storytelling
-Reel Generator
-Transform any PDF or YouTube video into a viral podcast-style short-form reel — powered entirely by NVIDIA NIM AI models.
+<div align="center">
 
-(venv) $ python main.py --pdf input/report.pdf --focus "shocking facts" --duration 90
-Pipeline
-01
-Extract Content
-PDF text extraction via PyMuPDF. YouTube: auto-subtitles first, falls back to Parakeet ASR transcription with word-level timestamps.
-parakeet-ctc-1.1b-asr parakeet-tdt-0.6b-v2
-02
-Generate Script
-Two-stage pipeline: Llama 3.1 70B drafts a 2-host storytelling dialogue. Nemotron Super 49B polishes hooks, punchlines, and pacing for virality.
-llama-3.1-70b-instruct nemotron-super-49b-v1
-03
-Synthesize Audio
-Dual-voice generation: ALEX (Jason voice) and MAYA (Aria voice) using Magpie TTS Multilingual. Falls back to gTTS if API unavailable. Timing map saved for caption sync.
-magpie-tts-multilingual
-04
-Assemble Video
-MoviePy composites a 1080×1920 (9:16) vertical reel with color-coded speaker captions, animated title, NVIDIA branding, and optional background music.
-moviepy 2.x ffmpeg
-Models Used
-All models accessed via one nvapi- key from build.nvidia.com/settings/api-keys
+<img src="https://capsule-render.vercel.app/api?type=venom&height=220&text=ReelMaker&fontSize=64&color=gradient&customColorList=6&fontColor=ffffff&animation=fadeIn&desc=AI-Powered%20Video%20Reel%20Generator%20%E2%80%A2%20Python%20%E2%80%A2%20Automated%20Content%20Creation&descSize=14&descAlignY=72&fontAlignY=42" width="100%"/>
 
-meta/llama-3.1-70b-instruct
-Script Drafter
-Converts raw text into a 2-host storytelling dialogue with hooks, pauses, and fact bombs.
-nvidia/nemotron-super-49b-v1
-Script Polisher
-Punches up the draft — sharpens hooks, cuts bloat, maximises virality.
-nvidia/magpie-tts-multilingual
-Dual Voice TTS
-Aria (MAYA) + Jason (ALEX) voices. Natural, expressive, multilingual synthesis.
-nvidia/parakeet-ctc-1.1b-asr
-YouTube Transcription
-Record-setting English ASR accuracy. Transcribes YouTube audio when no subtitles exist.
-nvidia/parakeet-tdt-0.6b-v2
-Word Timestamps
-Provides word-level timestamps used to sync captions frame-accurately to audio.
-gTTS (fallback)
-TTS Fallback
-Free Google TTS fallback — activates automatically if Magpie API is unavailable.
-Setup
-1
-Install ffmpeg
-Required for all audio/video processing
-# Windows (run in PowerShell)
-winget install ffmpeg
-# Then CLOSE terminal and open a NEW one
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=14&duration=2600&pause=1200&color=FF6B6B&center=true&vCenter=true&width=700&lines=AI-powered+video+reel+generation+from+raw+footage;Automated+content+creation+pipeline+%C2%B7+Python;Input+media+%E2%80%94%E2%96%BA+AI+processing+%E2%80%94%E2%96%BA+polished+reel+output;Built+for+creators%2C+marketers+%26+social+media+teams)](https://git.io/typing-svg)
 
-# Mac
-brew install ffmpeg
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://github.com/mustang-shr/ReelMaker)
+[![AI](https://img.shields.io/badge/AI%20Powered-FF6B6B?style=flat-square&logo=openai&logoColor=white)](https://github.com/mustang-shr/ReelMaker)
+[![Video](https://img.shields.io/badge/Video%20Generation-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://github.com/mustang-shr/ReelMaker)
+[![Stars](https://img.shields.io/github/stars/mustang-shr/ReelMaker?style=flat-square&color=ff6b6b)](https://github.com/mustang-shr/ReelMaker/stargazers)
 
-# Ubuntu
-sudo apt install ffmpeg
-2
-Create Virtual Environment & Install Packages
-Python 3.10+ recommended
+</div>
+
+---
+
+## 🎬 AI Video Reel Generator — What ReelMaker Does
+
+**ReelMaker** is a Python-based automated video reel generation pipeline. Drop raw media into `input/`, run the script, and get a polished reel in `output/` — no manual editing required. Built for content creators, social media teams, and marketers who need high-throughput reel production.
+
+```
+input/ (raw footage · clips · assets)
+        │
+        ▼
+┌───────────────────────┐
+│   AI Processing       │  ← Python pipeline
+│   Scene detection     │     Smart clip selection
+│   Sequence assembly   │     Automated transitions
+│   Audio sync          │     Pacing optimisation
+└───────────┬───────────┘
+            │
+            ▼
+output/ (polished reel · ready to publish)
+```
+
+---
+
+## 🚀 Features
+
+| Feature | Description |
+|---|---|
+| 🎯 **Smart Clip Selection** | AI selects the best moments from raw footage |
+| ✂️ **Auto Assembly** | Sequences clips into a coherent, paced reel |
+| 🎵 **Audio Processing** | Sync and optimise audio across clips |
+| 📂 **Simple I/O** | Drop files in `input/` → get reel in `output/` |
+| ⚡ **Fast Pipeline** | Fully automated — zero manual editing |
+
+---
+
+## ⚡ Getting Started
+
+### Prerequisites
+```bash
+Python 3.8+
+```
+
+### Installation
+```bash
+git clone https://github.com/mustang-shr/ReelMaker.git
+cd ReelMaker
 python -m venv venv
-
-# Windows
-venv\Scripts\Activate.ps1
-
-# Mac / Linux
-source venv/bin/activate
-
+source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-3
-Add Your API Key
-Get free key at build.nvidia.com/settings/api-keys
-# Create .env file in project root
-NVIDIA_API_KEY=nvapi-xxxxxxxxxxxxxxxxxxxx
+```
 
-# Verify it loads correctly
-python -c "from dotenv import load_dotenv; import os; load_dotenv(); print(os.getenv('NVIDIA_API_KEY')[:15])"
-Usage Examples
-From PDF
-python main.py --pdf input/report.pdf --focus "most shocking facts"
-From PDF · Custom Duration
-python main.py --pdf input/book.pdf --focus "key takeaways" --duration 60
-From YouTube
-python main.py --youtube "https://youtube.com/watch?v=VIDEO_ID"
-From YouTube · With Focus
-python main.py --youtube "https://youtu.be/VIDEO_ID" --focus "AI breakthroughs" --duration 90
+### Run
+```bash
+# Place your raw clips inside the input/ folder
+# Then run:
+python main.py
 
-Available flags: --pdf or --youtube (required) · --focus topic hint · --duration seconds (default 90)
+# Your generated reel will appear in output/
+```
 
-Output Structure
-Each run creates a timestamped folder inside output/
+---
 
-output/
-  reel_20260429_160102/
-    ★ reel_20260429_160102.mp4  ← your final video
-    podcast_audio.mp3  ← audio only
-    script_draft.txt  ← Llama 70B output
-    script_final.txt  ← Nemotron polished
-    metadata.json  ← title + hashtags + caption
-    timing.json  ← caption timestamps
-    raw_content.txt  ← extracted source text
-    segments/  ← individual audio clips
+## 📁 Project Structure
 
-Output format: 1080×1920 vertical (9:16) · 30fps · H.264 + AAC · Ready for Instagram Reels, TikTok, YouTube Shorts
+```
+ReelMaker/
+├── main.py              # Entry point — run this
+├── input/               # Drop raw footage/clips here
+├── output/              # Generated reels appear here
+├── requirements.txt     # Python dependencies
+└── README.md
+```
 
-Troubleshooting
-ModuleNotFoundError: No module named 'pkg_resources'
-moviepy version conflict. Fix: pip uninstall moviepy imageio imageio-ffmpeg -y then pip install moviepy==2.1.1
-ValueError: document closed
-PyMuPDF bug — fixed in latest step1_extract.py. Make sure you have the latest version of the file.
-Couldn't find ffmpeg or avconv
-After installing ffmpeg with winget, you must close the terminal and open a new one. Then verify with ffmpeg -version
-API Key found: NO — CHECK YOUR .env FILE
-The .env file is empty or unsaved. In PowerShell run: Set-Content -Path ".env" -Value "NVIDIA_API_KEY=nvapi-YOUR_KEY" -NoNewline
-Magpie TTS error 404 / 422
-Normal — script automatically falls back to gTTS (Google TTS). Audio will still be generated. Magpie may require self-hosted NIM containers for some endpoints.
-NVIDIA NIM · build.nvidia.com
-One API key · Five models · Infinite reels
+---
+
+## 🎯 Use Cases
+
+- **Content creators** — batch-generate reels from raw shoot footage
+- **Social media teams** — automate short-form content production at scale
+- **Marketers** — rapid reel creation for campaigns without editor dependency
+- **Developers** — extendable pipeline base for custom video AI workflows
+
+---
+
+## 🔧 Extend It
+
+ReelMaker is built as a clean pipeline — easy to extend:
+```python
+# Plug in your own AI model for clip scoring
+# Add custom transition effects
+# Integrate with social media APIs for auto-publish
+# Connect to a cloud storage bucket for input/output
+```
+
+---
+
+<div align="center">
+
+⭐ **Building something with video AI? Star this repo — it helps others find it.**
+
+[![LinkedIn](https://img.shields.io/badge/Shreyan%20Pal-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shreyan-pal)
+[![GitHub](https://img.shields.io/badge/mustang--shr-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mustang-shr)
+
+</div>
+
+<!-- SEO: ai-video-generation reel-maker automated-video python video-pipeline content-creation social-media reel instagram-reels short-form-video clip-selection video-automation media-processing generative-ai -->
+
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6&height=80&section=footer&animation=fadeIn" width="100%"/>
+</div>
